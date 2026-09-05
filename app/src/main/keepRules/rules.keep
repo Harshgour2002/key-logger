@@ -1,0 +1,12 @@
+# Add project specific R8 rules here.
+# AGP will combine all keep rule files in src/main/keepRules to pass to R8
+
+# Keep SecuritySdk and its methods for JNI access
+-keep class com.example.key_logging.security.SecuritySdk {
+    public static void enableAccessibilityShield(android.app.Activity);
+}
+
+# Keep all native methods
+-keepclassmembers class * {
+    native <methods>;
+}
